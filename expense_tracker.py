@@ -30,11 +30,9 @@ try:
             all_expense.append(expense)
 except FileNotFoundError:
     pass
-
 print("=" * 50)
 print("         PERSONAL EXPENSE TRACKER")
 print("=" * 50)
-
 while True:
     current_date = datetime.now().strftime("%d-%m-%Y")
     print("\nCurrent Date :", current_date)
@@ -153,16 +151,13 @@ if len(all_expense) > 0:
 
         if expense["amount"] > highest["amount"]:
             highest = expense
-
     print("\n" + "=" * 50)
     print("            HIGHEST EXPENSE")
-
     print("Date      :", highest["date"])
     print("Amount    : Rs", highest["amount"])
     print("Category  :", highest["category"])
 else:
     print("No expenses entered")
-
 plt.figure(figsize=(10, 6))
 plt.bar(category_names, category_values)
 plt.xlabel("Categories")
